@@ -1,3 +1,7 @@
 .venv/
 data/
 runs/
+
+# environment variables
+.env
+.env.*
