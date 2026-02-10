@@ -33,7 +33,7 @@ class Generator(nn.Module):
   def forward(self, X):
     return self.network(X)
 
-class MNIST_GAN():
+class MNIST_cGAN():
   def __init__(self, z_dim, img_dim, targets_dim, lr=3e-4, device="cpu"):
     # # Save folder for model loading
     # self.save_folder = save_folder
