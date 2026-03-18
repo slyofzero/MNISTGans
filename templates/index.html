@@ -21,12 +21,15 @@
               <h1 class="card-title mb-3">MNIST GAN</h1>
 
               <p class="text-muted mb-4">
-                The trained MNIST cGAN can generate an image of a digit on the
-                fly. Try it out by entering a digit below.
+                The GANs trained on the MNIST can generate an image of a digit
+                on the fly. Try it out by entering a digit below.
               </p>
 
-              <form method="POST" action="/generate" class="row g-3 justify-content-center">
-
+              <form
+                method="POST"
+                action="/generate"
+                class="row g-3 justify-content-center"
+              >
                 <div class="col-12 col-md-6">
                   <input
                     id="digit"
@@ -42,11 +45,12 @@
 
                   <select name="model_name" class="form-select" required>
                     {% for key, description in models.items() %}
-                      <option value="{{ key }}"
-                        {% if key == default_model %}selected{% endif %}
-                      >
-                        {{ models[key]["description"] }}
-                      </option>
+                    <option
+                      value="{{ key }}"
+                      {% if key == default_model %} selected {% endif %}
+                    >
+                      {{ models[key]["description"] }}
+                    </option>
                     {% endfor %}
                   </select>
                 </div>
@@ -56,9 +60,7 @@
                     Generate
                   </button>
                 </div>
-
               </form>
-
 
               {% if showimage %}
               <hr class="my-4" />
