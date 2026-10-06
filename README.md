@@ -117,18 +117,9 @@ $$\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}(x)}\Big[\log D(x \m
 * The **Discriminator** $D(x \mid y)$ maximizes the probability of assigning the correct label to both real training images and synthetic images conditioned on class $y$.
 * The **Generator** $G(z \mid y)$ minimizes $\log(1 - D(G(z \mid y) \mid y))$ (trained with non-saturating $\log D$ heuristic) to deceive the discriminator into classifying generated digits as real.
 
-```
-                      +-------------------+
-  z ~ N(0, I) [64] -->|                   |
-                      |  Generator G(z,y) | --> Synthetic Digit [1, 28, 28]
-  Class y [10]     -->|                   |              |
-  (One-Hot)           +-------------------+              v
-                                               +----------------------+
-  Real Digit [1, 28, 28] -------------------->|                      |
-                                               | Discriminator D(x,y) | --> Real / Fake [0, 1]
-  Class y [10] (One-Hot) -------------------->|                      |
-                                               +----------------------+
-```
+<p align="center">
+  <img src="./assets/cgan-architecture.svg" alt="Conditional GAN Architecture & Dataflow" width="100%" />
+</p>
 
 #### Generator Architecture
 
