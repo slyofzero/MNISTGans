@@ -1,0 +1,254 @@
+<svg width="100%" height="auto" viewBox="0 0 1000 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121518" />
+      <stop offset="40%" stop-color="#181B1E" />
+      <stop offset="75%" stop-color="#1F1B1A" />
+      <stop offset="100%" stop-color="#261A17" />
+    </linearGradient>
+
+    <!-- Border Subtle Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#363C42" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#E07A5F" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#363C42" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F7F6F2" />
+      <stop offset="100%" stop-color="#E07A5F" />
+    </linearGradient>
+
+    <!-- Accent Terracotta Glow -->
+    <radialGradient id="terracottaGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E07A5F" stop-opacity="0.28" />
+      <stop offset="60%" stop-color="#A84C36" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#181B1E" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Cyan/Blue Latent Glow -->
+    <radialGradient id="latentGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3D7B99" stop-opacity="0.22" />
+      <stop offset="70%" stop-color="#181B1E" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="pixelGrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 16 0 L 0 0 0 16" fill="none" stroke="#252A2F" stroke-width="0.7" stroke-opacity="0.5" />
+      <circle cx="0" cy="0" r="0.75" fill="#363C42" fill-opacity="0.6" />
+    </pattern>
+
+    <!-- Diagonal Accent Line Pattern -->
+    <pattern id="dotMatrix" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="#E07A5F" fill-opacity="0.12" />
+    </pattern>
+  </defs>
+
+  <style>
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .font-mono { font-family: 'Fira Code', 'Cascadia Code', Consolas, Menlo, Monaco, monospace; }
+
+    /* CSS Animations */
+    @keyframes floatDigit1 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.22; }
+      50% { transform: translateY(-7px) rotate(2deg); opacity: 0.45; }
+    }
+    @keyframes floatDigit2 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
+      50% { transform: translateY(-9px) rotate(-3deg); opacity: 0.38; }
+    }
+    @keyframes floatDigit3 {
+      0%, 100% { transform: translateY(0px); opacity: 0.15; }
+      50% { transform: translateY(-5px); opacity: 0.32; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+    @keyframes flowLine {
+      0% { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+    @keyframes matrixPulse {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 0.85; }
+    }
+    @keyframes pixelFlicker {
+      0%, 100% { fill: #E07A5F; fill-opacity: 0.9; }
+      33% { fill: #A84C36; fill-opacity: 0.4; }
+      66% { fill: #F7F6F2; fill-opacity: 0.8; }
+    }
+
+    .digit-float-1 { animation: floatDigit1 6s ease-in-out infinite; }
+    .digit-float-2 { animation: floatDigit2 7.5s ease-in-out infinite; }
+    .digit-float-3 { animation: floatDigit3 5s ease-in-out infinite; }
+    .pulse-glow { animation: pulseGlow 4s ease-in-out infinite; transform-origin: center; }
+    .flow-dash { stroke-dasharray: 6 4; animation: flowLine 3s linear infinite; }
+    .live-dot { animation: blinkDot 1.8s ease-in-out infinite; }
+    .pixel-anim-1 { animation: pixelFlicker 3s ease-in-out infinite; }
+    .pixel-anim-2 { animation: pixelFlicker 3.5s ease-in-out 0.8s infinite; }
+    .pixel-anim-3 { animation: pixelFlicker 4s ease-in-out 1.5s infinite; }
+  </style>
+
+  <!-- Base Card Container -->
+  <rect width="1000" height="240" rx="12" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.2" />
+
+  <!-- Background Grid Texture -->
+  <rect width="1000" height="240" rx="12" fill="url(#pixelGrid)" opacity="0.9" />
+  <rect width="1000" height="240" rx="12" fill="url(#dotMatrix)" />
+
+  <!-- Ambient Glow Blobs -->
+  <circle cx="500" cy="110" r="160" fill="url(#terracottaGlow)" class="pulse-glow" />
+  <circle cx="120" cy="120" r="110" fill="url(#latentGlow)" />
+  <circle cx="880" cy="120" r="120" fill="url(#terracottaGlow)" />
+
+  <!-- ==================== LEFT DECORATION: 28x28 PIXEL MATRIX SIMULATION ==================== -->
+  <g transform="translate(36, 38)">
+    <!-- Simulated MNIST Canvas Frame -->
+    <rect width="112" height="112" rx="6" fill="#181B1E" stroke="#363C42" stroke-width="1" />
+    <rect x="0" y="0" width="112" height="112" rx="6" fill="none" stroke="#E07A5F" stroke-width="0.8" stroke-opacity="0.3" />
+    
+    <!-- Mini grid inside -->
+    <g opacity="0.25">
+      <line x1="28" y1="0" x2="28" y2="112" stroke="#B5B0A6" stroke-width="0.5" stroke-dasharray="2 2" />
+      <line x1="56" y1="0" x2="56" y2="112" stroke="#B5B0A6" stroke-width="0.5" stroke-dasharray="2 2" />
+      <line x1="84" y1="0" x2="84" y2="112" stroke="#B5B0A6" stroke-width="0.5" stroke-dasharray="2 2" />
+      <line x1="0" y1="28" x2="112" y2="28" stroke="#B5B0A6" stroke-width="0.5" stroke-dasharray="2 2" />
+      <line x1="0" y1="56" x2="112" y2="56" stroke="#B5B0A6" stroke-width="0.5" stroke-dasharray="2 2" />
+      <line x1="0" y1="84" x2="112" y2="84" stroke="#B5B0A6" stroke-width="0.5" stroke-dasharray="2 2" />
+    </g>
+
+    <!-- Synthesizing Digit '8' / '0' Pixels -->
+    <!-- Top loop -->
+    <rect x="42" y="22" width="14" height="10" rx="2" fill="#E07A5F" class="pixel-anim-1" />
+    <rect x="56" y="22" width="14" height="10" rx="2" fill="#E07A5F" class="pixel-anim-2" />
+    <rect x="28" y="32" width="14" height="12" rx="2" fill="#E07A5F" opacity="0.85" />
+    <rect x="70" y="32" width="14" height="12" rx="2" fill="#E07A5F" class="pixel-anim-3" />
+    <rect x="36" y="44" width="18" height="10" rx="2" fill="#E07A5F" opacity="0.9" />
+    <rect x="56" y="44" width="18" height="10" rx="2" fill="#E07A5F" class="pixel-anim-1" />
+    <!-- Bottom loop -->
+    <rect x="26" y="54" width="14" height="14" rx="2" fill="#E07A5F" class="pixel-anim-2" />
+    <rect x="72" y="54" width="14" height="14" rx="2" fill="#E07A5F" opacity="0.85" />
+    <rect x="28" y="68" width="14" height="14" rx="2" fill="#E07A5F" class="pixel-anim-3" />
+    <rect x="70" y="68" width="14" height="14" rx="2" fill="#E07A5F" opacity="0.9" />
+    <rect x="42" y="80" width="14" height="10" rx="2" fill="#E07A5F" class="pixel-anim-1" />
+    <rect x="56" y="80" width="14" height="10" rx="2" fill="#E07A5F" class="pixel-anim-2" />
+
+    <!-- Canvas Label -->
+    <text x="56" y="132" fill="#B5B0A6" font-size="9.5" font-weight="600" text-anchor="middle" letter-spacing="0.8" class="font-mono">28×28 CANVAS</text>
+    <text x="56" y="145" fill="#E07A5F" font-size="8.5" text-anchor="middle" class="font-mono">G(z, y=8)</text>
+  </g>
+
+  <!-- Connective Data Flow Arrow from Matrix to Center -->
+  <path d="M 160 94 L 210 94" stroke="#E07A5F" stroke-width="1.2" class="flow-dash" opacity="0.6" />
+  <circle cx="210" cy="94" r="3" fill="#E07A5F" />
+
+  <!-- ==================== BACKGROUND FLOATING NUMBERS (0-9 MNIST MOTIF) ==================== -->
+  <g class="font-mono" font-weight="700">
+    <!-- Left Flank Digits -->
+    <text x="195" y="60" fill="#E07A5F" font-size="28" class="digit-float-1">0</text>
+    <text x="235" y="145" fill="#F7F6F2" font-size="24" class="digit-float-2">1</text>
+    <text x="180" y="200" fill="#A84C36" font-size="32" class="digit-float-3">2</text>
+    <text x="270" y="75" fill="#E07A5F" font-size="20" class="digit-float-2">3</text>
+    <text x="250" y="215" fill="#B5B0A6" font-size="26" class="digit-float-1">4</text>
+
+    <!-- Right Flank Digits -->
+    <text x="730" y="65" fill="#B5B0A6" font-size="24" class="digit-float-2">5</text>
+    <text x="715" y="205" fill="#E07A5F" font-size="28" class="digit-float-3">6</text>
+    <text x="785" y="85" fill="#F7F6F2" font-size="32" class="digit-float-1">7</text>
+    <text x="760" y="160" fill="#A84C36" font-size="22" class="digit-float-2">8</text>
+    <text x="805" y="215" fill="#E07A5F" font-size="26" class="digit-float-3">9</text>
+  </g>
+
+  <!-- ==================== RIGHT DECORATION: LATENT VECTOR ARCHITECTURE ==================== -->
+  <g transform="translate(850, 42)">
+    <!-- Latent Box -->
+    <rect width="114" height="106" rx="6" fill="#181B1E" stroke="#363C42" stroke-width="1" />
+    <rect x="0" y="0" width="114" height="106" rx="6" fill="none" stroke="#E07A5F" stroke-width="0.8" stroke-opacity="0.3" />
+
+    <!-- Vector Dimension Pills -->
+    <g transform="translate(10, 14)">
+      <rect width="94" height="18" rx="3" fill="#23272B" stroke="#363C42" stroke-width="0.7" />
+      <text x="47" y="12.5" fill="#F7F6F2" font-size="8.5" font-weight="600" text-anchor="middle" class="font-mono">z ~ N(0, I) [64]</text>
+    </g>
+
+    <text x="57" y="44" fill="#E07A5F" font-size="12" font-weight="700" text-anchor="middle" class="font-mono">⊕</text>
+
+    <g transform="translate(10, 50)">
+      <rect width="94" height="18" rx="3" fill="#23272B" stroke="#E07A5F" stroke-width="0.7" stroke-opacity="0.7" />
+      <text x="47" y="12.5" fill="#E07A5F" font-size="8.5" font-weight="600" text-anchor="middle" class="font-mono">y ∈ {0..9} [10]</text>
+    </g>
+
+    <g transform="translate(10, 76)">
+      <rect width="94" height="18" rx="3" fill="#2E2422" stroke="#A84C36" stroke-width="0.7" />
+      <text x="47" y="12.5" fill="#F7F6F2" font-size="8.5" font-weight="600" text-anchor="middle" class="font-mono">Input Dim: 74</text>
+    </g>
+
+    <text x="57" y="128" fill="#B5B0A6" font-size="9.5" font-weight="600" text-anchor="middle" letter-spacing="0.8" class="font-mono">LATENT SPACE</text>
+    <text x="57" y="141" fill="#E07A5F" font-size="8.5" text-anchor="middle" class="font-mono">CONDITIONED</text>
+  </g>
+
+  <!-- Connective Data Flow Arrow from Center to Latent -->
+  <path d="M 790 94 L 840 94" stroke="#E07A5F" stroke-width="1.2" class="flow-dash" opacity="0.6" />
+  <circle cx="790" cy="94" r="3" fill="#E07A5F" />
+
+  <!-- ==================== CENTER CONTENT: HERO TITLE & METADATA ==================== -->
+  <g transform="translate(500, 0)">
+    <!-- Top Pill: Status & Architecture -->
+    <g transform="translate(0, 30)">
+      <rect x="-165" y="0" width="330" height="24" rx="12" fill="#23272B" stroke="#363C42" stroke-width="1" />
+      <circle cx="-148" cy="12" r="3.5" fill="#E07A5F" class="live-dot" />
+      <text x="-136" y="15.5" fill="#E07A5F" font-size="9" font-weight="700" letter-spacing="1.2" class="font-mono">CONDITIONAL GAN</text>
+      <line x1="-20" y1="6" x2="-20" y2="18" stroke="#363C42" stroke-width="1" />
+      <text x="-10" y="15.5" fill="#B5B0A6" font-size="9" font-weight="500" letter-spacing="0.5" class="font-sans">CLASS-GUIDED SYNTHESIS</text>
+      <line x1="120" y1="6" x2="120" y2="18" stroke="#363C42" stroke-width="1" />
+      <text x="132" y="15.5" fill="#E07A5F" font-size="9" font-weight="700" class="font-mono">0–9</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="104" text-anchor="middle" fill="url(#titleGrad)" font-size="44" font-weight="800" letter-spacing="-0.5" class="font-sans">
+      MNIST cGAN
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="132" text-anchor="middle" fill="#B5B0A6" font-size="14" font-weight="400" letter-spacing="0.2" class="font-sans">
+      Controllable Handwritten Digit Generation &amp; Interactive Web Interface
+    </text>
+
+    <!-- Equation Line -->
+    <text x="0" y="158" text-anchor="middle" fill="#E07A5F" font-size="11.5" font-weight="500" letter-spacing="0.8" class="font-mono">
+      min_G max_D V(D, G) = E[log D(x|y)] + E[log(1 - D(G(z|y)|y))]
+    </text>
+
+    <!-- Feature Tags Pill Row -->
+    <g transform="translate(0, 186)">
+      <!-- Pill 1: PyTorch Engine -->
+      <g transform="translate(-190, 0)">
+        <rect width="115" height="24" rx="4" fill="#1F2327" stroke="#363C42" stroke-width="0.8" />
+        <circle cx="12" cy="12" r="2.5" fill="#EE4C2C" />
+        <text x="22" y="15.5" fill="#F7F6F2" font-size="9.5" font-weight="600" class="font-sans">PyTorch 2.x</text>
+      </g>
+
+      <!-- Pill 2: 10 Checkpoints -->
+      <g transform="translate(-65, 0)">
+        <rect width="130" height="24" rx="4" fill="#1F2327" stroke="#363C42" stroke-width="0.8" />
+        <circle cx="12" cy="12" r="2.5" fill="#E07A5F" />
+        <text x="22" y="15.5" fill="#F7F6F2" font-size="9.5" font-weight="600" class="font-sans">Epochs 10 → 100</text>
+      </g>
+
+      <!-- Pill 3: Flask UI -->
+      <g transform="translate(75, 0)">
+        <rect width="115" height="24" rx="4" fill="#1F2327" stroke="#363C42" stroke-width="0.8" />
+        <circle cx="12" cy="12" r="2.5" fill="#7952B3" />
+        <text x="22" y="15.5" fill="#F7F6F2" font-size="9.5" font-weight="600" class="font-sans">Flask + Web UI</text>
+      </g>
+    </g>
+  </g>
+</svg>
